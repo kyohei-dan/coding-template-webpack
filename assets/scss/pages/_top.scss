@@ -1,0 +1,14 @@
+@use "../global" as global;
+@use "../global/shortcut-functions" as f;
+
+.test {
+  background-color: #000000;
+  font-size: 16px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  @include global.mq(sp) {
+      margin: f.sp((20 auto));
+      font-size: f.sp(24);
+  }
+}
