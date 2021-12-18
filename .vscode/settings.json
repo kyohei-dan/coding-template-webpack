@@ -1,7 +1,39 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // ▼1つのtabキーでのスペース数
+  "editor.tabSize": 2,
+  // ▼ファイル保存時にフォーマットさせる設定
   "editor.formatOnSave": true,
+  "explorer.compactFolders": false,
+  // ▼スペースを視覚的に見やすくする
+  "editor.renderWhitespace": "all",
+  // ▼デフォルトのフォーマッターを指定
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // ▼ファイルごとのインデント数を制御
+  "editor.detectIndentation": false,
+  // ▼ファイル別の設定
   "[markdown]": {
     "editor.formatOnSave": false
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // ▼コメントアウトの文字色
+  "editor.tokenColorCustomizations": {
+    "comments": "#FF0000"
+  },
+  // ▼行末やファイル末尾の空白文字を削除
+  "files.trimTrailingWhitespace": true,
+  // ▼左のエクスプローラーで.gitファイルを見えるようにする設定
+  "files.exclude": {
+    "**/.git": false
+  },
+  // ▼class作成時に閉じタグにコメントがはいる設定
+  "emmet.syntaxProfiles": {
+    "html": {
+      "filters": "html,c"
+    }
+  },
+  "emmet.preferences": {
+    "filter.commentAfter": "<!-- /[#ID][.CLASS] -->"
   }
 }
