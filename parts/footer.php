@@ -1,1 +1,1 @@
-<footer class="footer"></footer><!-- /.footer -->
+<footer class="l-footer"></footer><!-- /.l-footer -->

@@ -17,7 +17,7 @@
   <link rel="icon" sizes="16x16" href="">
   <link rel="icon" sizes="32x32" href="">
 
-  <!--=============== FAVICON SVG===============-->
+  <!--=============== FAVICON SVG ===============-->
   <link rel="apple-touch-icon-precomposed" sizes="180x180" href="" type="image/svg+xml">
   <link rel="shortcut icon" href="" type="image/svg+xml">
   <link rel="icon" sizes="16x16" href="" type="image/svg+xml">
@@ -31,6 +31,9 @@
   <!--=============== CSS ===============-->
   <link rel="stylesheet" href="/dist/css/styles.css" media="print" onload="this.media='all'">
 
+  <!--=============== BOXICONS CSS  ===============-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
   <!--=============== DEFAULT OGP ===============-->
   <meta property="og:locale" content="ja_JP">
   <meta property="og:type" content="website">
@@ -41,7 +44,7 @@
   <meta property="og:image" content="絶対パスで指定　W1200px×H630pxがベスト">
 
   <!--=============== TWITTER OGP ===============-->
-  <meta name="twitter:site" content="@アカウント名" />
+  <meta name="twitter:site" content="@アカウント名" >
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:title" content="<?= $title; ?>">
   <meta property="twitter:description" content="<?= $description; ?>">

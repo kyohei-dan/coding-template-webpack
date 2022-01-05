@@ -1,1 +1,1 @@
-<header class="header"></header><!-- /.header -->
+<header class="l-header"></header><!-- /.l-header -->
