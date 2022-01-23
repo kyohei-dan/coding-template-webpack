@@ -1,1 +1,17 @@
 // サイト固有の関数・mixin・変数
+@mixin hover {
+  &:focus {
+    @content;
+  }
+  @media (hover: hover) and (pointer: fine)  {
+    &:hover {
+      @content;
+    }
+  }
+  // for IE11
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    &:hover {
+      @content;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 const Home = function () {
-  console.log("ドロワー");
+  console.log('ドロワーメニュー');
 };
 
 Home();
