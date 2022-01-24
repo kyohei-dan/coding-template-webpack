@@ -1,6 +1,7 @@
 {
   "name": "coding-template-webpack",
   "version": "1.0.0",
+  "license": "MIT",
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
@@ -8,23 +9,34 @@
     "build": "NODE_ENV=production webpack --mode production",
     "prod": "NODE_ENV=production webpack --mode production",
     "dev": "webpack --mode development --devtool=source-map",
-    "watch": "webpack --mode development --watch"
+    "watch": "webpack --mode development --watch",
+    "lint": "eslint /assets/js/modules/*.js",
+    "format": "prettier /assets/js/modules/*.js",
+    "fix": "npm run format && npm run lint",
+    "prepare": "husky install"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.0",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.5.1",
+    "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.1",
     "mini-css-extract-plugin": "^2.4.5",
     "postcss": "^8.4.4",
     "postcss-loader": "^6.2.1",
+    "prettier": "^2.5.1",
     "sass": "^1.44.0",
     "sass-loader": "^12.3.0",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
-    "webpack-fix-style-only-entries": "^0.6.1",
-    "prettier": "2.5.1"
+    "webpack-fix-style-only-entries": "^0.6.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }

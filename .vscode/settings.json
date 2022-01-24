@@ -17,6 +17,9 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
   // ▼コメントアウトの文字色
   "editor.tokenColorCustomizations": {
     "comments": "#FF0000"
@@ -35,5 +38,12 @@
   },
   "emmet.preferences": {
     "filter.commentAfter": "<!-- /[#ID][.CLASS] -->"
-  }
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact"
+  ],
+  // ▼vscode規定のフォーマッターを使わない設定
+  "html.format.enable": false,
+  "javascript.format.enable": false
 }
