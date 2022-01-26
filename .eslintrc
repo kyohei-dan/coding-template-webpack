@@ -9,6 +9,9 @@
 		"eslint:recommended", //ESLintおすすめルールの読み込み
 		"prettier" //Prettier適用
 	],
+  "parserOptions": {
+    "sourceType": "module"
+  },
 	//個別ルール
 	"rules": {
 		"no-extra-semi": "warn", //セミコロンがないと警告

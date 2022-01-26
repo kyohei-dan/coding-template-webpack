@@ -10,8 +10,8 @@
     "prod": "NODE_ENV=production webpack --mode production",
     "dev": "webpack --mode development --devtool=source-map",
     "watch": "webpack --mode development --watch",
-    "lint": "eslint /assets/js/modules/*.js",
-    "format": "prettier /assets/js/modules/*.js",
+    "format": "prettier --write assets/js/modules/*.js",
+    "lint": "eslint --fix assets/js/modules/*.js",
     "fix": "npm run format && npm run lint",
     "prepare": "husky install"
   },

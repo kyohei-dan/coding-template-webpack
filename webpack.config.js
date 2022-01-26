@@ -1,27 +1,26 @@
-const webpack = require("webpack");
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // 'production' か 'development' を指定
-const MODE = "development";
+const MODE = 'development';
 
 // production モード以外の場合、変数 enabledSourceMap は true
-const enabledSourceMap = process.env.NODE_ENV !== "production";
+const enabledSourceMap = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   mode: MODE,
   // エントリーポイントの設定
   entry: {
     // コンパイル対象のファイルを指定
-    app: path.resolve(__dirname, "./assets/js/index.js"),
-    styles: path.resolve(__dirname, "./assets/scss/styles.scss"),
+    app: path.resolve(__dirname, './assets/js/index.js'),
+    styles: path.resolve(__dirname, './assets/scss/styles.scss'),
   },
   // jsの出力設定
   output: {
-    path: path.resolve(__dirname, "./dist/"), // 出力先フォルダを絶対パスで指定
-    filename: "js/[name].js", // [name]にはentry:で指定したキーが入る
+    path: path.resolve(__dirname, './dist/'), // 出力先フォルダを絶対パスで指定
+    filename: 'js/[name].js', // [name]にはentry:で指定したキーが入る
   },
   module: {
     rules: [
@@ -33,7 +32,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader, // JSとCSSを別々に出力する
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               // オプションでCSS内のurl()メソッドの取り込まない
               url: false,
@@ -45,19 +44,19 @@ module.exports = {
           },
           // PostCSSのための設定
           {
-            loader: "postcss-loader", // オプションはpostcss.config.jsで指定
+            loader: 'postcss-loader', // オプションはpostcss.config.jsで指定
             options: {
               // PostCSS側でもソースマップを有効にする
               sourceMap: enabledSourceMap,
               postcssOptions: {
                 // ベンダープレフィックスを自動付与する
-                plugins: ["autoprefixer"],
+                plugins: ['autoprefixer'],
               },
             },
           },
           // Sassをバンドルするための機能
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
               // ソースマップの利用有無 ファイルがないときはnpm run buildで生成される
               sourceMap: enabledSourceMap,
@@ -74,17 +73,17 @@ module.exports = {
       // 対象ファイル指定
       cleanOnceBeforeBuildPatterns: [
         // 複数ある場合は配列で指定
-        "**/*", // 出力フォルダ（output: で指定したパス）内のすべてのファイル
+        '**/*', // 出力フォルダ（output: で指定したパス）内のすべてのファイル
       ],
     }),
     new FixStyleOnlyEntriesPlugin(), // CSS別出力時の不要JSファイルを削除
     new MiniCssExtractPlugin({
       // CSSの出力先
-      filename: "css/[name].css", // 出力ファイル名を相対パスで指定（[name]にはentry:で指定したキーが入る）
+      filename: 'css/[name].css', // 出力ファイル名を相対パスで指定（[name]にはentry:で指定したキーが入る）
     }),
   ],
   //source-map タイプのソースマップを出力
-  devtool: "source-map",
+  devtool: 'source-map',
   // node_modules を監視（watch）対象から除外
   watchOptions: {
     ignored: /node_modules/,
