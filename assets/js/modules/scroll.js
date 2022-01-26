@@ -11,7 +11,7 @@ const showFooterFunction = function () {
       if (window.innerHeight > getElementDistance) {
         header.classList.add('is-header-scroll-active');
       } else {
-        header.classLst.remove('is-header-scroll-active');
+        header.classList.remove('is-header-scroll-active');
       }
     });
   });
