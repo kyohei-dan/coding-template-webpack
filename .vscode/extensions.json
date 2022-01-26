@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "esbenp.prettier-vscode",
-    "shardulm94.trailing-spaces"
+    "shardulm94.trailing-spaces",
+    "bmewburn.vscode-intelephense-client"
   ]
 }
