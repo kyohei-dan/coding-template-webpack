@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   background-color: #000000;
-  color: white;
+  color: #fff;
   font-size: 16px;
   @include global.mq(sp) {
       margin: f.sp((20 auto));

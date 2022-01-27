@@ -65,8 +65,14 @@ module.exports = {
           // 下から順にコンパイル処理が実行されるので、記入順序に注意
         ],
       },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
     ],
   },
+  target: ['web', 'es5'],
   plugins: [
     // 出力先のフォルダを一旦空に
     new CleanWebpackPlugin({
