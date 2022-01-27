@@ -1,9 +1,6 @@
 {
   "printWidth": 120,
-  "tabWidth": 2,
   "singleQuote": true,
-  "parser": "typescript",
-	"trailingComma": "es5",
-	"semi": true,
-	"endOfLine": "lf"
+  "trailingComma": "es5",
+  "semi": true
 }
