@@ -1,18 +1,18 @@
-@use "../global" as global;
-@use "../global/shortcut-functions" as f;
+@use '../global' as global;
+@use '../global/shortcut-functions' as f;
 
 .test {
   display: flex;
   flex-direction: column;
-  background-color: #000000;
-  color: #fff;
   font-size: 16px;
+  color: #fff;
+  background: linear-gradient(to right, #ff6f00 50%, #009688 50%);
   @include global.mq(sp) {
-      margin: f.sp((20 auto));
-      font-size: f.sp(24);
+    margin: f.sp((20 auto));
+    font-size: f.sp(24);
   }
   @include global.hover {
-    background-color: #fff;
     color: #000;
+    background-color: #fff;
   }
 }

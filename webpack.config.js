@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -50,7 +51,15 @@ module.exports = {
               sourceMap: enabledSourceMap,
               postcssOptions: {
                 // ベンダープレフィックスを自動付与する
-                plugins: ['autoprefixer'],
+                plugins: [
+                  ['autoprefixer'],
+                  // [
+                  //   'css-declaration-sorter',
+                  //   {
+                  //     order: 'concentric-css',
+                  //   },
+                  // ],
+                ],
               },
             },
           },
@@ -60,6 +69,9 @@ module.exports = {
             options: {
               // ソースマップの利用有無 ファイルがないときはnpm run buildで生成される
               sourceMap: enabledSourceMap,
+              sassOptions: {
+                outputStyle: 'expanded',
+              },
             },
           },
           // 下から順にコンパイル処理が実行されるので、記入順序に注意
@@ -86,6 +98,10 @@ module.exports = {
     new MiniCssExtractPlugin({
       // CSSの出力先
       filename: 'css/[name].css', // 出力ファイル名を相対パスで指定（[name]にはentry:で指定したキーが入る）
+    }),
+    new StylelintPlugin({
+      configFile: path.resolve(__dirname, '.stylelintrc'),
+      fix: true,
     }),
   ],
   //source-map タイプのソースマップを出力

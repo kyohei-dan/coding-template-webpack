@@ -14,11 +14,26 @@
   "[markdown]": {
     "editor.formatOnSave": false
   },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  // ▼保存時にリンターを走らす
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
   },
   // ▼コメントアウトの文字色
   "editor.tokenColorCustomizations": {
@@ -39,10 +54,7 @@
   "emmet.preferences": {
     "filter.commentAfter": "<!-- /[#ID][.CLASS] -->"
   },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact"
-  ],
+  "eslint.validate": ["javascript", "javascriptreact"],
   // ▼vscode規定のフォーマッターを使わない設定
   "html.format.enable": false,
   "javascript.format.enable": false,
