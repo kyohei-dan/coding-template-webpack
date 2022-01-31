@@ -51,15 +51,7 @@ module.exports = {
               sourceMap: enabledSourceMap,
               postcssOptions: {
                 // ベンダープレフィックスを自動付与する
-                plugins: [
-                  ['autoprefixer'],
-                  // [
-                  //   'css-declaration-sorter',
-                  //   {
-                  //     order: 'concentric-css',
-                  //   },
-                  // ],
-                ],
+                plugins: [['autoprefixer']],
               },
             },
           },
@@ -100,7 +92,7 @@ module.exports = {
       filename: 'css/[name].css', // 出力ファイル名を相対パスで指定（[name]にはentry:で指定したキーが入る）
     }),
     new StylelintPlugin({
-      configFile: path.resolve(__dirname, '.stylelintrc.js'),
+      configFile: path.resolve(__dirname, 'stylelint.config.js'),
       fix: true,
     }),
   ],

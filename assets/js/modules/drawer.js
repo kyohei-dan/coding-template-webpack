@@ -1,4 +1,4 @@
-// ▼ドロワーメニューの開閉処
+// ▼ドロワーメニューの開閉処理
 const drawerActiveBtn = function () {
   document.addEventListener('DOMContentLoaded', () => {
     const drawerBtn = document.getElementById('js-drawer-button');

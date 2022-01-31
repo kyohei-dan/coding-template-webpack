@@ -55,11 +55,11 @@
     "filter.commentAfter": "<!-- /[#ID][.CLASS] -->"
   },
   "eslint.validate": ["javascript", "javascriptreact"],
+  "css.validate": false,
+  "scss.validate": false,
   // ▼vscode規定のフォーマッターを使わない設定
   "html.format.enable": false,
   "javascript.format.enable": false,
   // ▼拡張機能のphp intelephenseの設定
-  "intelephense.stubs": ["wordpress"],
-  "css.validate": false,
-  "scss.validate": false
+  "intelephense.stubs": ["wordpress"]
 }
