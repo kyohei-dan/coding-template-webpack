@@ -100,7 +100,7 @@ module.exports = {
       filename: 'css/[name].css', // 出力ファイル名を相対パスで指定（[name]にはentry:で指定したキーが入る）
     }),
     new StylelintPlugin({
-      configFile: path.resolve(__dirname, '.stylelintrc'),
+      configFile: path.resolve(__dirname, '.stylelintrc.js'),
       fix: true,
     }),
   ],

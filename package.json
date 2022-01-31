@@ -1,7 +1,6 @@
 {
   "name": "coding-template-webpack",
   "version": "1.0.0",
-  "license": "MIT",
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
@@ -21,6 +20,7 @@
     "autoprefixer": "^10.4.0",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
+    "core-js": "^3.20.3",
     "css-loader": "^6.5.1",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
@@ -30,10 +30,13 @@
     "postcss": "^8.4.4",
     "postcss-loader": "^6.2.1",
     "prettier": "^2.5.1",
+    "regenerator-runtime": "^0.13.9",
     "sass": "^1.44.0",
     "sass-loader": "^12.3.0",
     "stylelint": "^14.3.0",
     "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-order": "^5.0.0",
     "stylelint-prettier": "^2.0.0",
     "stylelint-scss": "^4.1.0",
     "stylelint-webpack-plugin": "^3.1.1",
@@ -46,9 +49,5 @@
       "prettier --write",
       "eslint --fix"
     ]
-  },
-  "dependencies": {
-    "core-js": "^3.20.3",
-    "regenerator-runtime": "^0.13.9"
   }
 }
