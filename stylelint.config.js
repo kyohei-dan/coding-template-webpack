@@ -2,15 +2,14 @@ module.exports = {
   plugins: ['stylelint-scss', 'stylelint-order', 'stylelint-prettier'],
   extends: ['stylelint-config-standard', 'stylelint-prettier/recommended', 'stylelint-config-prettier'],
   rules: {
-    'order/properties-alphabetical-order': null,
-    'at-rule-no-unknown': null,
-    'scss/at-rule-no-unknown': true,
-    'no-extra-semicolons': true,
-    'declaration-block-no-duplicate-properties': true,
-    'color-hex-length': 'short',
+    'at-rule-no-unknown': null, // @mixinと@includeなどを使用できるようにするためこっちを無効化
+    'scss/at-rule-no-unknown': true, // 上でnullにしたので@mixinと@includeなどを使用できるようにするためこっちを有効化
+    'no-extra-semicolons': true, // セミコロンが複数書かれていないか
+    'declaration-block-no-duplicate-properties': true, // 同じプロパティが書かれていないか
+    'color-hex-length': 'short', // カラーコードが正しく書かれているか
+    'order/properties-alphabetical-order': null, // アルファベット順に並べる設定を無効化
     'order/properties-order': [
       {
-        // Must be first.
         properties: ['all'],
       },
       {

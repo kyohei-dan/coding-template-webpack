@@ -61,5 +61,8 @@
   "html.format.enable": false,
   "javascript.format.enable": false,
   // ▼拡張機能のphp intelephenseの設定
-  "intelephense.stubs": ["wordpress"]
+  "intelephense.stubs": ["wordpress"],
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  }
 }

@@ -7,7 +7,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended', // ESLintおすすめルールの読み込み
-    'prettier', // Prettier適用
+    'prettier', // Prettier適用 パッケージのeslint-config-prettierを使うための記述
   ],
   parserOptions: {
     sourceType: 'module',

@@ -1,16 +1,20 @@
-<?php include ( dirname(__FILE__) . '/init.php' ); ?>
+<?php include(__DIR__ . '/init.php'); ?>
 <!DOCTYPE html>
 <html lang="ja">
-<?php view("head",
-['title' => 'トップページ | 会社名',
-'description' => 'ディスクリプション'
-]); ?>
+<?php view(
+  "head",
+  [
+    'title' => 'トップページ | 会社名',
+    'description' => 'ディスクリプション'
+  ]
+); ?>
 
 <body>
   <div id="top" class="p-top wrap-all">
 
     <!--=============== ▼HEADER ===============-->
     <?php view("header"); ?>
+    <img src="" alt="">
 
     <!--=============== ▼MAIN ===============-->
     <main class="p-main">
@@ -46,4 +50,5 @@
   <script src="/dist/js/app.js" defer></script>
   <?php view("polyfill"); ?>
 </body>
+
 </html>
