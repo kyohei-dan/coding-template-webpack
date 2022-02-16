@@ -4,24 +4,21 @@ const StylelintPlugin = require('stylelint-webpack-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-// 'production' か 'development' を指定
-const MODE = 'development';
-
 // production モード以外の場合、変数 enabledSourceMap は true
 const enabledSourceMap = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  mode: MODE,
   // エントリーポイントの設定
   entry: {
     // コンパイル対象のファイルを指定
-    app: path.resolve(__dirname, './assets/js/index.js'),
-    styles: path.resolve(__dirname, './assets/scss/styles.scss'),
+    app: path.resolve(__dirname, '/assets/js/index.js'),
+    styles: path.resolve(__dirname, '/assets/scss/styles.scss'),
   },
   // jsの出力設定
   output: {
-    path: path.resolve(__dirname, './dist/'), // 出力先フォルダを絶対パスで指定
-    filename: 'js/[name].js', // [name]にはentry:で指定したキーが入る
+    clean: true,
+    path: path.resolve(__dirname, 'dist'), // 出力先フォルダを絶対パスで指定
+    filename: 'js/[name].js', // [name]にはentry:で指定したappが入る
   },
   module: {
     rules: [
@@ -87,19 +84,18 @@ module.exports = {
       ],
     }),
     new FixStyleOnlyEntriesPlugin(), // CSS別出力時の不要JSファイルを削除
+    // CSSをJSにバンドルせず、別ファイルにわける
     new MiniCssExtractPlugin({
       // CSSの出力先
-      filename: 'css/[name].css', // 出力ファイル名を相対パスで指定（[name]にはentry:で指定したキーが入る）
+      filename: 'css/[name].css', // 出力ファイル名を相対パスで指定（[name]にはentry:で指定したstylesが入る）
     }),
     new StylelintPlugin({
       configFile: path.resolve(__dirname, 'stylelint.config.js'),
-      fix: true,
+      fix: true, // 自動修正可能なものは修正する
     }),
   ],
-  //source-map タイプのソースマップを出力
-  devtool: 'source-map',
   // node_modules を監視（watch）対象から除外
   watchOptions: {
-    ignored: /node_modules/,
+    ignored: ['/assets/images/', '/node_modules/'],
   },
 };

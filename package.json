@@ -1,14 +1,11 @@
 {
   "name": "coding-template-webpack",
   "version": "1.0.0",
-  "description": "",
-  "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=production webpack --mode production",
-    "prod": "NODE_ENV=production webpack --mode production",
-    "dev": "webpack --mode development --devtool=source-map",
-    "watch": "webpack --mode development --watch",
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack --config webpack.dev.js",
+    "watch": "webpack --config webpack.dev.js --watch",
     "format": "prettier --write assets/js/modules/*.js",
     "lint": "eslint --fix assets/js/modules/*.js",
     "fix": "npm run format && npm run lint",
@@ -17,14 +14,17 @@
   "devDependencies": {
     "@babel/core": "^7.16.12",
     "@babel/preset-env": "^7.16.11",
+    "@squoosh/lib": "^0.4.0",
     "autoprefixer": "^10.4.0",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^10.2.4",
     "core-js": "^3.20.3",
     "css-loader": "^6.5.1",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.4",
+    "image-minimizer-webpack-plugin": "^3.2.3",
     "lint-staged": "^12.3.1",
     "mini-css-extract-plugin": "^2.4.5",
     "postcss": "^8.4.4",
@@ -42,7 +42,8 @@
     "stylelint-webpack-plugin": "^3.1.1",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
-    "webpack-fix-style-only-entries": "^0.6.1"
+    "webpack-fix-style-only-entries": "^0.6.1",
+    "webpack-merge": "^5.8.0"
   },
   "lint-staged": {
     "*.js": [
